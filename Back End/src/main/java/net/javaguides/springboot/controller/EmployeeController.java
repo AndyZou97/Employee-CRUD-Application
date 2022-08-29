@@ -37,6 +37,8 @@ public class EmployeeController {
         employee.setFirstName(inputEmployee.getFirstName());
         employee.setLastName(inputEmployee.getLastName());
         employee.setEmailId(inputEmployee.getEmailId());
+        employee.setTitle(inputEmployee.getTitle());
+        employee.setPhoneNumber(inputEmployee.getPhoneNumber());
         return  this.employeeRepository.save(employee);
     }
     @DeleteMapping("/employees/{id}")
@@ -46,18 +48,3 @@ public class EmployeeController {
 
 
 }
-
-
-/*
-    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id){
-        Employee employee = employeeRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
-
-        employeeRepository.delete(employee);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return ResponseEntity.ok(response);
-    }
-
-
- */

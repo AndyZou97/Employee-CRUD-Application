@@ -3,4 +3,6 @@ export class Employee {
     firstName!:string;
     lastName!:string;
     emailId!:string;
+    title!:string;
+    phoneNumber!:string;
 }
